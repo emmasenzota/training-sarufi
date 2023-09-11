@@ -113,7 +113,7 @@
                     })
                     .then(async (response) => {
                         const res = response.json();
-                        const innerPromise = await res.then((data) => data.actions[0].send_message);
+                        const innerPromise = await res.then((data) => data.message);
 
                         // Access the array to print reply message from sarufi
                         const send_message = innerPromise;

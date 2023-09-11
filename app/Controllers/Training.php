@@ -20,11 +20,11 @@ class Training extends Controller{
     public const trainingArray = array(
             'desc' => 'Sisi tunauza masaishuka na nguo za kiutamaduni, tunapatikana arusha',
             'intents'=>[
-              'greets'=> [ 'hujambo', 'habari','za asubui', 'za mchana', 'mambo', 'niaje ','boss'
+              'greets'=> [ 'hujambo', 'habari','za asubui', 'za mchana', 'mambo', 'niaje ','boss','mambo vipi', 'Za saizi'
               ],
               'goodbye'=> [ 'Asante', 'Karibu tena', 'Asante sana', 'Nashukuru boss'
               ],
-              'order_shuka'=> [ 'Nahitaji masaishuka', 'Naitaji mashuka', 'Masai shuka zipo', 'Natoa order ya masaishuka'
+              'order_shuka'=> [ 'Nahitaji masaishuka', 'Naitaji mashuka', 'Masai shuka zipo', 'Natoa order ya masaishuka','masaishuka','masaai shuka'
               ],
               'type_shuka'=> [ 'Zipo nyekundu', 'zipo mchanganyiko wa nyekundu na nyeusi', 'Kijani na bluu','Kijani','Nyekundu','bluu','ugoro','nyeusi','boks kubwa'],
             ],
@@ -51,17 +51,17 @@ class Training extends Controller{
                     "message"=> [
                     "Sawa boss, naomba anwani yako au nipeleke gari gani?"
                     ],
-                    "next_state" => "address"
-                ],
-                "address" => [
-                    "message" => [
-                    "Naomba na namba yako ya simu?"
-                    ],
                     "next_state" => "phone_number"
                 ],
                 "phone_number" => [
                     "message" => [
-                    "YNashukuru boss order yako inashuhulikiwa",
+                    "Naomba na namba yako ya simu?"
+                    ],
+                    "next_state" => "ending_greetings"
+                ],
+                "ending_greetings" => [
+                    "message" => [
+                    "Nashukuru boss order yako inashuhulikiwa",
                     "Asante sana boss mzigo wako uko tayari asante sana boss."
                     ],
                     "next_state" => "end"
